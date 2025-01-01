@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Block AI images from results",
+    "version": "1.0",
+    "description": "Blocks certain sites from appearing in image search results, with the goal of blocking most AI generated images🙂👍.\n Works on google and duckduckgo with some website domains i manually put in myself + some phrasing you might find in a link.\n Latest update has been on: 01/01/2025. It might not work entirely at a later date if my code doen't apply well anymore.👍",
+    "permissions": ["scripting"],
+    "host_permissions": ["*://*/*"],
+    "content_scripts": [
+        {
+            "matches": ["*://duckduckgo.com/*"],
+            "js": ["contentDdg.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["*://www.google.com/*"],
+            "js": ["contentGoogle.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
