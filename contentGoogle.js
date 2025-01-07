@@ -8,7 +8,8 @@ const blockedDomains = ["ar.inspiredpencil.com", "craiyon.com", "reddit.com", "s
     "aiart", "ai-image", "aiimage", "image-generated", "imagegenerated", "generated-image",
     "generatedimage", "seaart.ai", "deepdreamgenerator.com", "prompthero.com", "blackink.ai",
     "stablecog.com", "story.com", "geniusaiprompts.com", "midjourney", " dalle ", "-nft-", "/nft/",
-    "-ai-", "/ai/", "ai-photo", "aiphoto", "hotpot.ai", "-dalle-", "/dalle/", "dalleai"]
+    "-ai-", "/ai/", "ai-photo", "aiphoto", "hotpot.ai", "-dalle-", "/dalle/", "dalleai", "artstation.com",
+    "zmo.ai"]
 
 // Function to check if a URL belongs to a blocked domain
 function isBlocked(url) {
@@ -31,7 +32,7 @@ function removeBlockedImages() {
             const imageDomain = parentContainerGoogle.dataset.lpage
             if (isBlocked(imageDomain)){
                 console.log(`Blocking image: ${imageDomain}`)
-                img.remove()
+                parentContainerGoogle.remove()
             }
         }    
     })
@@ -48,7 +49,8 @@ removeBlockedImages()
 //idee voor later mogelijk: de variabele die de div de naam matcht je weet wel, die misschien ergen bovenaan aanduiden en zorgen dat de code flexibel is en makkelijker geupdate kan worden? idk man
 
 
-
+//chose to block reddit images as i found there to be a tooon of ai generated images poppping up from reddit and none of them had anything in the link attached to the image that could be flagged due to it just being posts by people who didnt bother
+// chode to not do this with x.com, deviantart, shutterstock & pinterest due to believing that those are more easily flagged generally OR have less generated image pop up relative to valuable non-generated images👍. you know what i mean right?
 
 
 

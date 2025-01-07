@@ -8,7 +8,8 @@ const blockedDomains = ["ar.inspiredpencil.com", "craiyon.com", "reddit.com", "s
     "aiart", "ai-image", "aiimage", "image-generated", "imagegenerated", "generated-image",
     "generatedimage", "seaart.ai", "deepdreamgenerator.com", "prompthero.com", "blackink.ai",
     "stablecog.com", "story.com", "geniusaiprompts.com", "midjourney", " dalle ", "-nft-", "/nft/",
-    "-ai-", "/ai/", "ai-photo", "aiphoto", "hotpot.ai", "-dalle-", "/dalle/", "dalleai"]
+    "-ai-", "/ai/", "ai-photo", "aiphoto", "hotpot.ai", "-dalle-", "/dalle/", "dalleai", "artstation.com",
+    "zmo.ai"]
 
 // Function to check if a URL belongs to a blocked domain
 function isBlocked(url) {
@@ -24,7 +25,7 @@ function removeBlockedImages() {
             const imageDomain = parentContainerDdg.children[2].href
             if (isBlocked(imageDomain)){
             console.log(`Blocking image: ${imageDomain}`)
-            img.remove()
+            parentContainerDdg.remove()
             }
         }
     })
